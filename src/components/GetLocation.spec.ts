@@ -8,7 +8,7 @@ describe("GetLocation", () => {
         global.navigator.geolocation = {
             getCurrentPosition: () => { },
         };
-        const wrapper = await shallowMount(GetLocation);
+        const wrapper = shallowMount(GetLocation);
         expect(wrapper).toBeTruthy();
     });
 
@@ -26,7 +26,7 @@ describe("GetLocation", () => {
             getCurrentPosition: mockGeoLocation,
         };
 
-        const wrapper = await shallowMount(GetLocation);
+        const wrapper = shallowMount(GetLocation);
         expect(wrapper.vm.coords).toEqual({
             latitude: 51.5074,
             longitude: -0.1278,
